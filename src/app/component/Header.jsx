@@ -1,25 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './component/Header';
-import Footer from './component/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import { Link } from 'react-router-dom';
 
-const App = () => {
+const Header = () => {
   return (
-    <Router>
-      <Header />
-      <main className="py-8">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <header className="bg-blue-600 text-white p-20">
+      <nav className="container mx-auto flex justify-between">
+        <div className="text-3xl font-bold">Multi Page Website Using React Components</div>
+        <div className="space-x-4">
+          <Link className= "text-2xl font-bold hover:text-gray-300" to="/">Home</Link>
+          <Link className="text-2xl font-bold hover:text-gray-300" to="/about">About</Link>
+          <Link className=" text-2xl font-bold hover:text-gray-300" to="/contact">Contact</Link>
+        </div>
+      </nav>
+    </header>
   );
 };
 
-export default App;
+export default Header;
